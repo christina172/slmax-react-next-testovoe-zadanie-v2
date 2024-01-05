@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 import Chip from '@mui/material/Chip';
+import Typography from '@mui/material/Typography';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -44,12 +45,13 @@ export default function FilterSort() {
 
   return (
     <>
+      <Typography component='h1' variant='h3' sx={{textTransform: 'capitalize'}}>{filter}</Typography>
       <Box sx={{display: 'flex', flexWrap: 'wrap', gap: 1}}>
-        <Chip label="Cats" onClick={()=>handleClick('cats')} />
+        <Chip label="Cats" variant="outlined" onClick={()=>handleClick('cats')} />
         <Chip label="Dogs" variant="outlined" onClick={()=>handleClick('dogs')} />
-        <Chip label="Birds" onClick={()=>handleClick('birds')} />
+        <Chip label="Birds" variant="outlined" onClick={()=>handleClick('birds')} />
         <Chip label="Fish" variant="outlined" onClick={()=>handleClick('fish')} />
-        <Chip label="Tropical" onClick={()=>handleClick('tropical')} />
+        <Chip label="Tropical" variant="outlined" onClick={()=>handleClick('tropical')} />
         <Chip label="Wild" variant="outlined" onClick={()=>handleClick('wild')} />
       </Box>
       <FormControl sx={{ m: 1, minWidth: 120, alignSelf: "flex-end"}} size="small">
