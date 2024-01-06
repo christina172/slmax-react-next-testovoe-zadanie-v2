@@ -45,7 +45,7 @@ export default function FilterSort() {
 
   return (
     <>
-      <Typography component='h1' variant='h3' sx={{textTransform: 'capitalize'}}>{filter}</Typography>
+      <Typography component='h1' variant='h5' sx={{textTransform: 'capitalize'}}>{filter}</Typography>
       <Box sx={{display: 'flex', flexWrap: 'wrap', gap: 1}}>
         <Chip label="Cats" variant="outlined" onClick={()=>handleClick('cats')} />
         <Chip label="Dogs" variant="outlined" onClick={()=>handleClick('dogs')} />

@@ -2,12 +2,12 @@ import { getServerSession } from "next-auth/next";
 
 import Box from "@mui/material/Box";
 import Masonry from '@mui/lab/Masonry';
+import Typography from "@mui/material/Typography";
 
 import { options } from "../api/auth/[...nextauth]/options";
 
-import fetchImages from "@/libs/fetchImages";
-
 import type { SearchResultWithImages } from "@/models/Images";
+import fetchImages from "@/libs/fetchImages";
 
 import FilterSort from "./FilterSort";
 import PaginationComponent from "./Pagination";
@@ -37,7 +37,7 @@ export default async function Gallery({query, order_by, page}: Props) {
   const images: SearchResultWithImages | undefined = await fetchImages(url);
 
   if (!images) {
-    return (<h2>No images found</h2>)
+    return (<Typography variant='h6' component='h2' align='center'>No images found</Typography>)
   }
 
   return (
@@ -50,6 +50,5 @@ export default async function Gallery({query, order_by, page}: Props) {
       </Masonry>
       <PaginationComponent pages={images.total_pages} query={query} order_by={order_by} />
     </Box>
-    
   )
 }

@@ -20,7 +20,7 @@ async function Navbar () {
     <AppBar position="sticky">
       <Toolbar variant="dense">
         <Typography 
-          variant="h4" 
+          variant="h5" 
           component="h2"
           sx={{flexGrow:1}}
         >

@@ -4,6 +4,9 @@ import { redirect } from "next/navigation";
 
 import Typography from '@mui/material/Typography';
 
+import FavouriteGallery from "../components/FavouriteGallery";
+
+
 export default async function FavouritePage() {
   const session = await getServerSession(options);
 
@@ -12,6 +15,9 @@ export default async function FavouritePage() {
   }
 
   return (
-    <Typography>Hello, {session?.user?.name}! Here are your favourite images!</Typography>
+    <>
+      <Typography variant='h5' component='h1' sx={{mb: 3}}>My favourite images</Typography>
+      <FavouriteGallery session={session} />
+    </> 
   )
 }
