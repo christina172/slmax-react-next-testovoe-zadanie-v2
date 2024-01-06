@@ -74,6 +74,5 @@ export default function Image({image}: Props) {
       </Typography>
       
     </Box>
-    
   )
 }

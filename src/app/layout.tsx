@@ -6,6 +6,7 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import Box from "@mui/material/Box";
 
 import Navbar from './components/Navbar';
+import AuthProvider from './context/AuthProvider';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,10 +26,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <AppRouterCacheProvider>
-          <Navbar />
-          <Box component='main' sx={{p: 3, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            {children}
-          </Box>
+          <AuthProvider>
+            <Navbar />
+            <Box component='main' sx={{p: 3, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+              {children}
+            </Box>
+          </AuthProvider>
         </AppRouterCacheProvider>
       </body>
     </html>
