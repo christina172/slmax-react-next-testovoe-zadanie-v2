@@ -1,7 +1,13 @@
-import fetchImages from "@/libs/fetchImages";
-import type { SearchResultWithImages } from "@/models/Images";
+import { getServerSession } from "next-auth/next";
+
 import Box from "@mui/material/Box";
 import Masonry from '@mui/lab/Masonry';
+
+import { options } from "../api/auth/[...nextauth]/options";
+
+import fetchImages from "@/libs/fetchImages";
+
+import type { SearchResultWithImages } from "@/models/Images";
 
 import FilterSort from "./FilterSort";
 import PaginationComponent from "./Pagination";
@@ -14,6 +20,8 @@ type Props = {
 }
 
 export default async function Gallery({query, order_by, page}: Props) {
+  const session = await getServerSession(options);
+
   if (!query) {
     query="animals";
   };
@@ -37,7 +45,7 @@ export default async function Gallery({query, order_by, page}: Props) {
       <FilterSort />
       <Masonry columns={{ xs: 1, sm: 2, md: 3, lg:4 }} spacing={2.5}>
         {images.results.map((image)=>(
-          <Image image={image} />
+          <Image image={image} session={session}/>
         ))}
       </Masonry>
       <PaginationComponent pages={images.total_pages} query={query} order_by={order_by} />

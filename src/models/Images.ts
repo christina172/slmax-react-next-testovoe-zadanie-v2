@@ -7,11 +7,11 @@ const SearchResultSchema = z.object({
 
 const ImageSchema = z.object({
   id: z.string(),
-  created_at: z.string(),
-  width: z.number(),
-  height: z.number(),
-  color: z.string(),
-  blur_hash: z.string(),
+  // created_at: z.string(),
+  // width: z.number(),
+  // height: z.number(),
+  // color: z.string(),
+  // blur_hash: z.string(),
   likes: z.number(),
   description: z.union([z.string(), z.null()]),
   user: z.object({
@@ -22,7 +22,7 @@ const ImageSchema = z.object({
     })
   }),
   urls: z.object({
-    regular: z.string(),
+    // regular: z.string(),
     small: z.string()
   }),
   links: z.object({

@@ -56,7 +56,7 @@ export default function MenuComponent() {
           </Link>
         </MenuItem>
         <Divider />
-        <MenuItem onClick={() => {signOut({ callbackUrl: 'http://localhost:3000' })}}>
+        <MenuItem sx={{color: 'common.black'}} onClick={() => {signOut({ callbackUrl: 'http://localhost:3000' })}}>
           Log out
         </MenuItem>
       </Menu>
