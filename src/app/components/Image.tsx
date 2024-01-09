@@ -78,7 +78,6 @@ export default function Image({image, session}: Props) {
       }}
     >
       <Box 
-        key={image.id} 
         component="img" 
         className='image'
         src={image.urls.small} 

@@ -42,7 +42,7 @@ export default function FavouriteGallery({session}: Props) {
   if (!images.length) {
     return (
       <Typography variant='h6' component='h2' align='center'>
-        You haven't added any images to favourite yet
+        You haven&#39;t added any images to favourite yet
       </Typography>
     )
   }

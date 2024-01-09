@@ -45,7 +45,7 @@ export default async function Gallery({query, order_by, page}: Props) {
       <FilterSort />
       <Masonry columns={{ xs: 1, sm: 2, md: 3, lg:4 }} spacing={2.5}>
         {images.results.map((image)=>(
-          <Image image={image} session={session}/>
+          <Image key={image.id} image={image} session={session}/>
         ))}
       </Masonry>
       <PaginationComponent pages={images.total_pages} query={query} order_by={order_by} />
